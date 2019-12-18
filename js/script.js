@@ -14,17 +14,18 @@ console.log(etaPasseggero);
 
 // Calcolare Costo biglietto
 var prezzoBiglietto = numeroKm * 0.21;
-var scontoMinori =  prezzoBiglietto / 20;
-var scontoAnziani = prezzoBiglietto / 40;
-
+var scontoMinori =  (prezzoBiglietto * 20) / 100;
+var scontoAnziani = (prezzoBiglietto * 40) / 100;
+var prezzoDefinitivoMinori = prezzoBiglietto - scontoMinori;
+var prezzoDefinitivoAnziani = prezzoBiglietto - scontoAnziani;
 if (isNaN(numeroKm) || isNaN(etaPasseggero)) {
   alert ('non hai inserito un numero');
   } else {
     if (etaPasseggero < 18) {
-      console.log(scontoMinori);
+      console.log(prezzoDefinitivoMinori);
   } else if (etaPasseggero >= 65){
-      console.log(scontoAnziani);
-  } else {(etaPasseggero >= 18 && etaPasseggero < 65)
+      console.log(prezzoDefinitivoAnziani);
+  } else
     console.log(prezzoBiglietto);
   }
 }
